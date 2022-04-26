@@ -127,16 +127,60 @@ def reverseStrings(toReverse):
 
 def palindrome(string):
     
-    reversingWord = reverseStrings(string)
+    reversingWord = string[::-1]
     
-    for index in range(0,len(string)):
+    for index in range(len(string)):
         if string[index] == reversingWord[index]:
             isPalindrome = True
         else:
             isPalindrome = False
             break
     
+    return isPalindrome
+    
     
 
-str = input("Enter a word: ")
-palindrome(str)
+#str = input("Enter a word: ")
+#palindrome(str)
+
+#8. Definir una función que dadas dos listas indique si existe al menos un elemento en común
+def commonElements(list1, list2):
+    hasCommonElements =  False
+    for e in list1:
+        for i in list2:
+            if e == i:
+                print(f"common element found. element is: {e}")
+                hasCommonElements = True
+    
+    return hasCommonElements
+
+"""
+numberList1 = [1,3,5,43,7,6,12]
+numberlist2 = [3,7,9]
+
+res = commonElements(numberList1,numberlist2)
+if res == True:
+    print(f"{numberList1} has common elements with {numberlist2}")
+else:
+    print("no common elements")
+"""
+
+#9. Definir función que tome un caracter y lo multiplique por el númer de veces que se le ha indicado como por argumento
+
+def generateCharachters(times,charachter):
+    result = ""
+    for c in range(0,times):
+        result += charachter
+    
+    return result
+
+#print(generateCharachters((int(input("enter times: "))),(input("enter charachter: "))))
+
+def generateHistogram(values):
+    tmp = ""
+    for element in values:
+        tmp += generateCharachters(int(element),'*')
+        print(tmp)
+        tmp = ""
+
+generateHistogram([1,4,4,3])
