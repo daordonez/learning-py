@@ -177,10 +177,8 @@ def generateCharachters(times,charachter):
 #print(generateCharachters((int(input("enter times: "))),(input("enter charachter: "))))
 
 def generateHistogram(values):
-    tmp = ""
     for element in values:
-        tmp += generateCharachters(int(element),'*')
-        print(tmp)
-        tmp = ""
+        print(element * '*')
+        
 
 generateHistogram([1,4,4,3])
