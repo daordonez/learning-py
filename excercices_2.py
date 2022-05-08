@@ -6,6 +6,7 @@ Title: Learning python form scratch
 
 #1. Escribir una función que devuelva el valor más alto de una lista que se le proporcione
 import string
+import this
 
 
 def max_list(nums):
@@ -94,5 +95,93 @@ def convertFromBin(binary):
     return int(binary,2)
 
 
-res = convertFromBin(input("enter binary value: "))
-print(f"Integer value is: {res}")
+#res = convertFromBin(input("enter binary value: "))
+#print(f"Integer value is: {res}")
+
+#6. Escribr un programa donde se ingrese el año en curso. Se ingrese el nombre y el año de nacimiento de 3 personas y se calcule cuantos años cumple cada persona durante el año en curso
+# IMPORTANTE : la forma de acceder a un diccionario se basa en asignar valores ( nombre que queramos) a los valores key-value del diccionario
+
+
+def getMyBirthDay(currentYear,peopleBirthYear):
+    
+    for name,year in peopleBirthYear.items():
+        thisYears = currentYear - year
+        print(f"{name} will be {thisYears} years old this year")
+
+people = {
+    'Diego' : 1991,
+    'Alejandro': 1988,
+    'Albert' : 1987
+}
+
+#getMyBirthDay(2022,people)
+
+#7. Definir una tupla con las edades de 10 personas. Imprimir la cantidad de personas con edades superiores a 20 años
+
+def aboveTwentyYearsOld (tuple):
+    totalAboveTwenty = 0
+    
+    for val in tuple:
+        if val > 20:
+            totalAboveTwenty += 1
+    
+    return totalAboveTwenty
+
+
+thisYears = (4,21,19,16,40,4)
+
+""" 
+totalY = aboveTwentyYearsOld(thisYears)
+print(f"Values are: {thisYears}")
+print(f"There are {totalY} value above 20 in the given list.")
+"""
+
+#8. Definir en una lista un conjunto de nombres, e imprimir la cantidad de nombres que comienzan por la letra B
+
+def charInFinder(nameList,char):
+    
+    for word in nameList:
+        if char in word:
+            print(f"{word} contains {char}")
+
+""" 
+nameList = ['Juan','Susana','Elizabet','Noelia','Federico','Carlos']
+charInFinder(nameList,(input("Enter char to find: ")))
+"""
+
+#9. Crear una función que cuente vocales, donde el usuario sea el que especifique la palabra
+
+def getVowel(word):
+    count = 0
+    vowels = "aeiou"
+    
+    for letter in word:
+        if letter.lower() in vowels:
+            count += 1
+    
+    return count
+    
+
+""" 
+reslt = getVowel(input("Enter a word: "))
+print(f"{reslt} vowels found")
+"""
+
+
+#10. calcular si un año es biciesto o no
+
+def isLeapYear(year):
+    isleap = False
+    
+    if ((year % 4) == 0) and ((year % 100) != 0):
+        isleap = True
+    
+    return isleap
+
+
+thisYear = int(input("Enter a year to test: "))
+
+if isLeapYear(thisYear):
+    print(f"{thisYear} IS LEAP")
+else:
+    print(f"{thisYear} is NOT leap")
