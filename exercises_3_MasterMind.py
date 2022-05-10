@@ -2,6 +2,7 @@
 # - Debe solicitar primero la longitud de la cadena
 # - se debe ir solicitando números para que se compruebe que si ha acertado con la cadena
 
+
 import random
 
 def masterMind(long):
